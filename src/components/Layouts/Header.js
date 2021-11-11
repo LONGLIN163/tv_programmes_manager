@@ -1,8 +1,8 @@
-import React,{ useContext } from 'react';
+import React from 'react';
 import {AppBar,Toolbar,Typography} from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
+import {DialogPane} from '../Programmes';
 
-import { ProgramContext } from '../ProgramStore';
 
 const styles={
     flex:{
@@ -11,15 +11,13 @@ const styles={
 }
 
 const Header = ({classes}) => {
-    const {title} = useContext(ProgramContext)
-
     return ( 
         <AppBar position="static">
             <Toolbar>
                 <Typography variant="h3" color="inherit" className={classes.flex}> 
-                    h3---{title}
+                    Tv Kit
                 </Typography>
-                {/* <DialogPane /> */}
+                <DialogPane />
             </Toolbar>
         </AppBar>
      );

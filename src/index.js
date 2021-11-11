@@ -23,7 +23,7 @@ const theme = createTheme({
   },
 });
 
-console.log("index---theme---",theme)
+//console.log("index---theme---",theme)
 
 
 ReactDOM.render( 

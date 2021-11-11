@@ -1,4 +1,4 @@
-export const programTypes=[
+export const types=[
     "Series","Movies","Cartoons","Shows","Ads"
 ]
 
