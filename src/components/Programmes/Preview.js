@@ -10,8 +10,8 @@ const Preview = () => {
         onEditForm
     } = useContext(ProgramContext)
 
-    console.log("editMode------",editMode)
-    console.log("programme------",programme)
+    //console.log("editMode------",editMode)
+    //console.log("programme------",programme)
     const isNotEmpty=programme==={}
 
     return ( 
@@ -22,15 +22,12 @@ const Preview = () => {
                 gutterBottom
                 color="secondary"
             >
-                { isNotEmpty ? programme.title : "Welcome"}
+                { isNotEmpty ? programme.title : "Welcome Preview"}
             </Typography>
 
             {
                 editMode
-                ? <Form 
-                    key={ isNotEmpty ? programme.id : "welcome"}
-                    onSubmit={onEditForm}
-                />
+                ? <Form />
                 : <Typography 
                     variant={"subtitle2" }
                 >

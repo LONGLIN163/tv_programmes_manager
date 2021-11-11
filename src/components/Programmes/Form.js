@@ -9,21 +9,30 @@ const Form = () => {
     const [title,setTitle]=useState('');
     const [synopsis,setSynopsis]=useState('');
     const [type,setType]=useState('');
+
+    const {programme,onEditForm,setOpenDialog,programTypes} = useContext(ProgramContext)
+
     const [currentPrograme,setCurrentPrograme]=useState({});
     
-    const {programme,onItemCreate,programTypes} = useContext(ProgramContext)
+
+    console.log("programme in Form-------",programme)
 
     useEffect(() => {
         if(programme){
             setCurrentPrograme(programme)
+            setId(programme.id)
+            setTitle(programme.title)
+            setType(programme.type)
+            setSynopsis(programme.synopsis)
         }
-        setCurrentPrograme({title,synopsis,type})
     },[])
 
     const handleChange=({target:{value,name}}) => {
         if(name==="title"){
             setTitle(value);
-            setId(value);
+            if(!programme){
+                setId(value);
+            }
         }
         if(name==="type") setType(value);
         if(name==="synopsis") setSynopsis(value);
@@ -35,13 +44,13 @@ const Form = () => {
 
     const handleSubmit = () => {
         console.log("currentPrograme-------",currentPrograme)
-        onItemCreate(currentPrograme)
+        onEditForm(currentPrograme)
         setCurrentPrograme({
             title:'',
             synopsis:'',
             type:''
         })
-
+        setOpenDialog(false)
     }
     
 

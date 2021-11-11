@@ -6,12 +6,13 @@ import { ProgramContext } from '../ProgramStore';
 
 const DialogPane = () => {
 
-    const {programmesByType,} = useContext(ProgramContext)
+    const {openDialog,setOpenDialog} = useContext(ProgramContext)
 
-    const [open,setOpen]=useState(false);
+    //const [open,setOpen]=useState(false);
 
     const handleToggle=() => {
-        setOpen(!open)
+        //setOpen(!open)
+        setOpenDialog(!openDialog)
     }
 
     const handleFormSubmit= (programme) => {
@@ -32,7 +33,7 @@ const DialogPane = () => {
 
                 <Dialog 
                     aria-labelledby="form-dialog-title"
-                    open={open}
+                    open={openDialog}
                     onClose={handleToggle}
                     fullWidth
                 >
@@ -45,9 +46,7 @@ const DialogPane = () => {
                         <DialogContentText>
                             please fill out the form below......
                         </DialogContentText>
-
                         <Form />
-
                     </DialogContent>
 
                 </Dialog>

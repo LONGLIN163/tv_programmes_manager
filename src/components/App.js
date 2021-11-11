@@ -12,6 +12,7 @@ const App = () => {
     const [programme,setProgram]=useState({});
     const [category,setCategory]=useState('');
     const [editMode,setEditMode]=useState(false);
+    const [openDialog,setOpenDialog]=useState(false);
     const [programTypes,setProgramTypes]=useState(types);
     const [programmesByType,setProgrammesByType]=useState([]);
 
@@ -43,7 +44,6 @@ const App = () => {
      }
    
      const onItemCreate = (programme) => {
-       console.log("create programme----",programme)
        const pArr=[]
        pArr.push(programme)
        const temp=initProgrammes.concat(pArr)
@@ -78,6 +78,9 @@ const App = () => {
         setProgram,
         category,
         editMode,
+        setEditMode,
+        openDialog,
+        setOpenDialog,
         programTypes,
         programmesByType,
         onItemCreate,
@@ -87,7 +90,7 @@ const App = () => {
         onDeleteItem,
         onItemSelect
     }
-    console.log("contextValue--------",contextValue)
+    //console.log("contextValue--------",contextValue)
 
     return ( 
         <ProgramStore contextValue={contextValue}>
