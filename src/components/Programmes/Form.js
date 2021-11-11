@@ -3,18 +3,22 @@ import {FormControl,MenuItem,InputLabel,Select,TextField,Button} from '@material
 import { ProgramContext } from '../ProgramStore';
 
 
-const Form = () => {
+const Form = ({programme,onSubmit}) => {
 
     const [id,setId]=useState('');
     const [title,setTitle]=useState('');
     const [synopsis,setSynopsis]=useState('');
+    const [imageUrl,setImageUrl]=useState('');
+    const [duration,setDuration]=useState('');
     const [type,setType]=useState('');
+    const [episode,setEpisode]=useState('');
+    const [chapter,setChapter]=useState('');
 
-    const {programme,onEditForm,setOpenDialog,programTypes} = useContext(ProgramContext)
+    const {setOpenDialog,programTypes} = useContext(ProgramContext)
 
     const [currentPrograme,setCurrentPrograme]=useState({});
     
-
+    console.log("onSubmit------",onSubmit)
     console.log("programme in Form-------",programme)
 
     useEffect(() => {
@@ -22,10 +26,14 @@ const Form = () => {
             setCurrentPrograme(programme)
             setId(programme.id)
             setTitle(programme.title)
-            setType(programme.type)
             setSynopsis(programme.synopsis)
+            setSynopsis(programme.imageUrl)
+            setSynopsis(programme.duration)
+            setType(programme.type)
+            setSynopsis(programme.episode)
+            setSynopsis(programme.chapter)
         }
-    },[])
+    },[programme])
 
     const handleChange=({target:{value,name}}) => {
         if(name==="title"){
@@ -44,7 +52,9 @@ const Form = () => {
 
     const handleSubmit = () => {
         console.log("currentPrograme-------",currentPrograme)
-        onEditForm(currentPrograme)
+
+        onSubmit(currentPrograme)
+
         setCurrentPrograme({
             title:'',
             synopsis:'',

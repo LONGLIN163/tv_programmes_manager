@@ -6,18 +6,15 @@ import { ProgramContext } from '../ProgramStore';
 
 const DialogPane = () => {
 
-    const {openDialog,setOpenDialog} = useContext(ProgramContext)
-
-    //const [open,setOpen]=useState(false);
+    const {openDialog,setOpenDialog,onItemCreate} = useContext(ProgramContext)
 
     const handleToggle=() => {
-        //setOpen(!open)
         setOpenDialog(!openDialog)
     }
 
     const handleFormSubmit= (programme) => {
-        this.handleToggle()
-        this.props.onCreate(programme)
+        handleToggle()
+        onItemCreate(programme)
     }
 
     return (
@@ -46,7 +43,9 @@ const DialogPane = () => {
                         <DialogContentText>
                             please fill out the form below......
                         </DialogContentText>
-                        <Form />
+                        <Form 
+                            onSubmit={handleFormSubmit}
+                        />
                     </DialogContent>
 
                 </Dialog>
