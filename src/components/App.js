@@ -33,16 +33,16 @@ const App = () => {
       setProgrammesByType(getProgramTypes())
     },[initProgrammes])
    
-    const handleCatSelect=(category)=>{
+    const onCatSelect=(category)=>{
         setCategory(category)
     }
    
-     const handleItemSelect=(id)=>{
-       setProgram(initProgrammes.find(ex => ex.id===id))
+     const onItemSelect=(id)=>{
+       setProgram(initProgrammes.find(item => item.id===id))
        setEditMode(false)
      }
    
-     const handleExCreate = (programme) => {
+     const onItemCreate = (programme) => {
        console.log("create programme----",programme)
        const pArr=[]
        pArr.push(programme)
@@ -51,22 +51,20 @@ const App = () => {
        setInitProgrammes(temp)
      }
 
-     const handleExDel = (id) => {
-       const newInitPrograms=initProgrammes.filter(ex => ex.id!==id);
+     const onDeleteItem = (id) => {
+       const newInitPrograms=initProgrammes.filter(item => item.id!==id);
        setInitProgrammes(newInitPrograms)
        setEditMode(programme.id===id ? false : editMode)
        setProgram(programme.id===id ? {} : programme)
      }
    
-     const handleItemEdit = (id) => {
-
-       setProgram(initProgrammes.find(ex => ex.id===id))
+     const onEditItem = (id) => {
+       setProgram(initProgrammes.find(item => item.id===id))
        setEditMode(true)
-
      }
    
-     const handleExEdit = (programme) => {
-       const tempProgramArr=initProgrammes.filter(ex => ex.id!==programme.id);
+     const onEditForm = (programme) => {
+       const tempProgramArr=initProgrammes.filter(item => item.id!==programme.id);
        tempProgramArr.push(programme)
 
        setInitProgrammes(tempProgramArr)
@@ -82,12 +80,12 @@ const App = () => {
         editMode,
         programTypes,
         programmesByType,
-        handleExCreate,
-        onCatSelect:handleCatSelect,
-        onEditItem:handleItemEdit,
-        onEditForm:handleExEdit,
-        onDeleteItem:handleExDel,
-        onItemSelect:handleItemSelect
+        onItemCreate,
+        onCatSelect,
+        onEditItem,
+        onEditForm,
+        onDeleteItem,
+        onItemSelect
     }
     console.log("contextValue--------",contextValue)
 
@@ -102,25 +100,3 @@ const App = () => {
 }
  
 export default App;
-
-
-
-// const getinitailProgrammes=()=>{
-//   return programTypes.reduce((programmes, category) => ({
-//     ...programmes,
-//     [category]:[]
-//   }),{})
-// }
-// const initProgrammesTemp=getinitailProgrammes()    
-// const getProgrammesByType = () => {
-//   return Object.entries( 
-//     programmes.reduce((programmes,programme) => {
-//       const {type}=programme
-//       programmes[type] = [...programmes[type],programme]
-//       return programmes;
-//     },initProgrammesTemp)
-//     )
-// }
-// const getProgrammesByTypeTemp=getProgrammesByType();
-// const [programmesByType,setProgrammesByType]=useState(getProgrammesByTypeTemp);
-

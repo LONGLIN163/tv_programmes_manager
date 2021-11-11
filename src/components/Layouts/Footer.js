@@ -25,6 +25,7 @@ const Footer = () => {
                 textColor="secondary"
                 variant="scrollable"
                 scrollButtons="auto">
+                <Tab label="All" key={0} />
                 {
                     programTypes.map((item,index) => {
                         return (

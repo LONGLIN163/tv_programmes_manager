@@ -11,7 +11,7 @@ const Form = () => {
     const [type,setType]=useState('');
     const [currentPrograme,setCurrentPrograme]=useState({});
     
-    const {programme,handleExCreate,programTypes} = useContext(ProgramContext)
+    const {programme,onItemCreate,programTypes} = useContext(ProgramContext)
 
     useEffect(() => {
         if(programme){
@@ -35,9 +35,7 @@ const Form = () => {
 
     const handleSubmit = () => {
         console.log("currentPrograme-------",currentPrograme)
-
-        handleExCreate(currentPrograme)
-
+        onItemCreate(currentPrograme)
         setCurrentPrograme({
             title:'',
             synopsis:'',

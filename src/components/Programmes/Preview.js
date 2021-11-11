@@ -3,15 +3,16 @@ import {Typography} from '@material-ui/core';
 import {Form} from './';
 import { ProgramContext } from '../ProgramStore';
 
-
 const Preview = () => {
-
     const {
-        programTypes,
         editMode,
         programme,
         onEditForm
     } = useContext(ProgramContext)
+
+    console.log("editMode------",editMode)
+    console.log("programme------",programme)
+    const isNotEmpty=programme==={}
 
     return ( 
         <>
@@ -21,21 +22,19 @@ const Preview = () => {
                 gutterBottom
                 color="secondary"
             >
-                { programme ? programme.title : "welcome"}
+                { isNotEmpty ? programme.title : "Welcome"}
             </Typography>
 
             {
                 editMode
                 ? <Form 
-                    key={programme ? programme.id : "welcome"}
-                    programTypes={programTypes} 
+                    key={ isNotEmpty ? programme.id : "welcome"}
                     onSubmit={onEditForm}
-                    programme={programme}
                 />
                 : <Typography 
                     variant={"subtitle2" }
                 >
-                    {programme ? programme.synopsis : "please select an item!"}
+                    {isNotEmpty ? programme.synopsis : "please select an item!"}
                 </Typography>
             }
         </>

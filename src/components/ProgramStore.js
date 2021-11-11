@@ -12,13 +12,12 @@ export const ProgramStore = (props) => {
         editMode,
         programTypes,
         programmesByType,
-        handleExCreate,
+        onItemCreate,
         onCatSelect,
         onEditItem,
         onEditForm,
         onDeleteItem,
         onItemSelect
-
     }=props.contextValue;
 
     return ( 
@@ -30,7 +29,7 @@ export const ProgramStore = (props) => {
             editMode,
             programTypes,
             programmesByType,
-            handleExCreate,
+            onItemCreate,
             onCatSelect,
             onEditItem,
             onEditForm,
