@@ -17,7 +17,7 @@ const Preview = () => {
         onEditForm
     } = useContext(ProgramContext)
 
-    console.log("programme in preview-----",programme)
+    //console.log("programme in preview-----",programme)
 
     const isEmpty= Object.keys(programme).length === 0
 

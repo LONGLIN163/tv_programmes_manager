@@ -21,8 +21,10 @@ export const ProgramStore = (props) => {
         onEditItem,
         onEditForm,
         onDeleteItem,
+        onDeleteItemFromPlayList,
         onItemSelect,
-        onAddItemToPlayList
+        onAddItemToPlayList,
+        DupProgramWarningOpen
     }=props.contextValue;
 
     return ( 
@@ -43,8 +45,10 @@ export const ProgramStore = (props) => {
             onEditItem,
             onEditForm,
             onDeleteItem,
+            onDeleteItemFromPlayList,
             onItemSelect,
-            onAddItemToPlayList
+            onAddItemToPlayList,
+            DupProgramWarningOpen
         }}>
             {props.children}
         </ProgramContext.Provider>

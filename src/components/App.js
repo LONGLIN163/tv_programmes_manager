@@ -16,6 +16,7 @@ const App = () => {
     const [programTypes,setProgramTypes]=useState(types);
     const [programmesByType,setProgrammesByType]=useState([]);
     const [programmesInPlayList,setProgrammesInPlayList]=useState([]);
+    const [DupProgramWarningOpen,setDupProgramWarning]=useState(false);
 
     const getProgramTypes=()=>{
       const initData=programTypes.reduce((initProgrammes, category) => ({
@@ -53,8 +54,15 @@ const App = () => {
      }
 
      const onDeleteItem = (id) => {
-       const newInitPrograms=initProgrammes.filter(item => item.id!==id);
-       setInitProgrammes(newInitPrograms)
+       const tempPrograms=initProgrammes.filter(item => item.id!==id);
+       setInitProgrammes(tempPrograms)
+       setEditMode(programme.id===id ? false : editMode)
+       setProgram(programme.id===id ? {} : programme)
+     }
+
+     const onDeleteItemFromPlayList = (id) => {
+       const tempPrograms=programmesInPlayList.filter(item => item.id!==id);
+       setProgrammesInPlayList(tempPrograms)
        setEditMode(programme.id===id ? false : editMode)
        setProgram(programme.id===id ? {} : programme)
      }
@@ -73,12 +81,23 @@ const App = () => {
        setEditMode(false)
      }
 
-     const onAddItemToPlayList = (programme) => {
-        const pArr=[]
-        pArr.push(programme)
-        const temp=programmesInPlayList.concat(pArr)
-        console.log("temp---",temp)
+     const onAddItemToPlayList = (id) => {
+
+        const prePlayListIdArr=programmesInPlayList.map(p => p.id);
+        console.log("prePlayListIdArr----",prePlayListIdArr)
+
+        if(prePlayListIdArr.includes(id)){
+          setDupProgramWarning(true)
+          return
+        }
+
+        const programAdded=initProgrammes.find(item => item.id===id)
+        const programAddedArr=[]
+        programAddedArr.push(programAdded)
+        const temp=programmesInPlayList.concat(programAddedArr)
+        console.log("temp2---",temp)
         setProgrammesInPlayList(temp)
+        setDupProgramWarning(false)
     }
     
     const contextValue={
@@ -98,8 +117,10 @@ const App = () => {
         onEditItem,
         onEditForm,
         onDeleteItem,
+        onDeleteItemFromPlayList,
         onItemSelect,
-        onAddItemToPlayList
+        onAddItemToPlayList,
+        DupProgramWarningOpen
     }
     //console.log("contextValue--------",contextValue)
 

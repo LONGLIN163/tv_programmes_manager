@@ -11,6 +11,8 @@ const styles={
 }
 
 const Header = ({classes}) => {
+    console.log("classes2---",classes)
+
     return ( 
         <AppBar position="static">
             <Toolbar>

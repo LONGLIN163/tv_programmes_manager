@@ -17,7 +17,7 @@ const Catalog = () => {
         onAddItemToPlayList
     } = useContext(ProgramContext)
 
-    console.log("programmesByType----",programmesByType)
+    //console.log("programmesByType----",programmesByType)
 
     return ( 
         <>
@@ -66,6 +66,7 @@ const Catalog = () => {
                                                 <PlaylistAddIcon />
                                             </IconButton>
                                         </ListItemSecondaryAction>
+                                        
                                     </ListItem>
                                     )
                                 })

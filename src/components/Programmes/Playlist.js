@@ -1,7 +1,6 @@
 import React, { Fragment,useContext } from 'react';
 import {List,ListItem ,ListItemText,Typography, ListItemSecondaryAction, IconButton} from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Edit';
 import { ProgramContext } from '../ProgramStore';
 
 
@@ -11,10 +10,11 @@ const Playlist = () => {
         programmesInPlayList,
         category,
         onItemSelect,
-        onDeleteItem
+        onDeleteItemFromPlayList
     } = useContext(ProgramContext)
 
-    console.log("programmesInPlayList----",programmesInPlayList)
+    //console.log("programmesInPlayList----",programmesInPlayList)
+    //console.log("programmesInPlayList-category---",category)
 
     return ( 
         <>
@@ -26,38 +26,33 @@ const Playlist = () => {
             >
                 PlayList
             </Typography>
-            {
-            programmesInPlayList.map(([group,programmesInPlayList]) => {
-                return(
-                    !category || category===group
-                    ?<Fragment key={group}>
+            
 
-                        <List component="nav" >
-                            {
-                                programmesInPlayList.map( ({id,title}) => {
-                                    return (
-                                        <ListItem 
-                                            button 
-                                            key={id} 
-                                            onClick={ () => onItemSelect(id)}
-                                        >
-                                            <ListItemText 
-                                                primary={title}
-                                            />
-                                            <ListItemSecondaryAction>
-                                                <IconButton edge="end" aria-label="comments" onClick={()=>onDeleteItem(id)}>
-                                                    <DeleteIcon />
-                                                </IconButton>
-                                            </ListItemSecondaryAction>
-                                        </ListItem>
-                                    )
-                                })
-                            }
-                        </List>
-                    </Fragment>
-                    :null  
-                )
-            })}
+            <Fragment>
+                <List component="nav" >
+                    {
+                        programmesInPlayList.map( ({id,title}) => {
+                            return (
+                                <ListItem 
+                                    button 
+                                    key={id} 
+                                    onClick={ () => onItemSelect(id)}
+                                >
+                                    <ListItemText 
+                                        primary={title}
+                                    />
+                                    <ListItemSecondaryAction>
+                                        <IconButton edge="end" aria-label="comments" onClick={()=>onDeleteItemFromPlayList(id)}>
+                                            <DeleteIcon />
+                                        </IconButton>
+                                    </ListItemSecondaryAction>
+                                </ListItem>
+                            )
+                        })
+                    }
+                </List>
+            </Fragment>
+
         </>
      )
 }
