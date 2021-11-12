@@ -15,6 +15,7 @@ const App = () => {
     const [openDialog,setOpenDialog]=useState(false);
     const [programTypes,setProgramTypes]=useState(types);
     const [programmesByType,setProgrammesByType]=useState([]);
+    const [programmesInPlayList,setProgrammesInPlayList]=useState([]);
 
     const getProgramTypes=()=>{
       const initData=programTypes.reduce((initProgrammes, category) => ({
@@ -71,6 +72,14 @@ const App = () => {
        setProgram(programme)
        setEditMode(false)
      }
+
+     const onAddItemToPlayList = (programme) => {
+        const pArr=[]
+        pArr.push(programme)
+        const temp=programmesInPlayList.concat(pArr)
+        console.log("temp---",temp)
+        setProgrammesInPlayList(temp)
+    }
     
     const contextValue={
         initProgrammes,
@@ -83,12 +92,14 @@ const App = () => {
         setOpenDialog,
         programTypes,
         programmesByType,
+        programmesInPlayList,
         onItemCreate,
         onCatSelect,
         onEditItem,
         onEditForm,
         onDeleteItem,
-        onItemSelect
+        onItemSelect,
+        onAddItemToPlayList
     }
     //console.log("contextValue--------",contextValue)
 

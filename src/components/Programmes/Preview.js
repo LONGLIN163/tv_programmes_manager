@@ -27,6 +27,7 @@ const Preview = () => {
                 variant={"h4" }
                 style={{marginTop:20}}
                 color="secondary"
+                gutterBottom
             >
                 {
                 editMode

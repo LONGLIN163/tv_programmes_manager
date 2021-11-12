@@ -3,6 +3,7 @@ import {List,ListItem ,ListItemText,Typography, ListItemSecondaryAction, IconBut
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import { ProgramContext } from '../ProgramStore';
+import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
 
 
 const Catalog = () => {
@@ -12,13 +13,23 @@ const Catalog = () => {
         category,
         onItemSelect,
         onDeleteItem,
-        onEditItem
+        onEditItem,
+        onAddItemToPlayList
     } = useContext(ProgramContext)
 
     console.log("programmesByType----",programmesByType)
 
     return ( 
         <>
+            <Typography 
+                variant={"h4" }
+                style={{marginTop:20}}
+                color="secondary"
+                gutterBottom
+            >
+                Media Resources
+            </Typography>
+           
             {
             programmesByType.map(([group,programmesByType]) => {
                 return(
@@ -50,6 +61,9 @@ const Catalog = () => {
                                             </IconButton> 
                                             <IconButton edge="end" aria-label="comments" onClick={()=>onDeleteItem(id)}>
                                                 <DeleteIcon />
+                                            </IconButton>
+                                            <IconButton edge="end" aria-label="comments" onClick={()=>onAddItemToPlayList(id)}> 
+                                                <PlaylistAddIcon />
                                             </IconButton>
                                         </ListItemSecondaryAction>
                                     </ListItem>

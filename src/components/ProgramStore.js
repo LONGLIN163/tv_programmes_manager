@@ -15,12 +15,14 @@ export const ProgramStore = (props) => {
         setOpenDialog,
         programTypes,
         programmesByType,
+        programmesInPlayList,
         onItemCreate,
         onCatSelect,
         onEditItem,
         onEditForm,
         onDeleteItem,
-        onItemSelect
+        onItemSelect,
+        onAddItemToPlayList
     }=props.contextValue;
 
     return ( 
@@ -35,12 +37,14 @@ export const ProgramStore = (props) => {
             setOpenDialog,
             programTypes,
             programmesByType,
+            programmesInPlayList,
             onItemCreate,
             onCatSelect,
             onEditItem,
             onEditForm,
             onDeleteItem,
-            onItemSelect
+            onItemSelect,
+            onAddItemToPlayList
         }}>
             {props.children}
         </ProgramContext.Provider>

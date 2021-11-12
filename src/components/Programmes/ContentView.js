@@ -1,7 +1,7 @@
 import React from 'react';
 import {Grid,Paper} from '@material-ui/core';
 
-import {Catalog,Preview} from './'
+import {Catalog,Preview,Playlist} from './'
 import { withStyles } from '@material-ui/core/styles';
 
 
@@ -41,14 +41,19 @@ const styles=theme=> console.log("theme------",theme) || ({
 const ContentView = ({classes}) => {
     return(
         <Grid container className={classes.container}>
-            <Grid item xs={12} sm={6} className={classes.item}>
-                <Paper className={classes.paperStyle}>
+            <Grid item xs={12} sm={3} className={classes.item}>
+                <Paper outlined className={classes.paperStyle}>
                     <Catalog />
                 </Paper>
             </Grid>
             <Grid item xs={12} sm={6} className={classes.item}>
                <Paper className={classes.paperStyle}>
                     <Preview />
+                </Paper>
+            </Grid>
+            <Grid item xs={12} sm={3} className={classes.item}>
+               <Paper className={classes.paperStyle}>
+                    <Playlist />
                 </Paper>
             </Grid>
         </Grid>
