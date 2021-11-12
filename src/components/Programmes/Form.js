@@ -27,11 +27,11 @@ const Form = ({programme,onSubmit}) => {
             setId(programme.id)
             setTitle(programme.title)
             setSynopsis(programme.synopsis)
-            setSynopsis(programme.imageUrl)
-            setSynopsis(programme.duration)
+            setImageUrl(programme.imageUrl)
+            setDuration(programme.duration)
             setType(programme.type)
-            setSynopsis(programme.episode)
-            setSynopsis(programme.chapter)
+            setEpisode(programme.episode)
+            setChapter(programme.chapter)
         }
     },[programme])
 
@@ -44,6 +44,10 @@ const Form = ({programme,onSubmit}) => {
         }
         if(name==="type") setType(value);
         if(name==="synopsis") setSynopsis(value);
+        if(name==="imageUrl") setSynopsis(value);
+        if(name==="duration") setSynopsis(value);
+        if(name==="episode") setSynopsis(value);
+        if(name==="chapter") setSynopsis(value);
     };
 
     useEffect(() => {
@@ -71,6 +75,42 @@ const Form = ({programme,onSubmit}) => {
                         label="Title"
                         value={title}
                         name='title'
+                        onChange={handleChange}
+                        margin="normal"
+                        fullWidth
+                    />
+                    <br />
+                    <TextField
+                        label="Image"
+                        value={imageUrl}
+                        name='imageUrl'
+                        onChange={handleChange}
+                        margin="normal"
+                        fullWidth
+                    />
+                    <br />
+                    <TextField
+                        label="Duration"
+                        value={duration}
+                        name='duration'
+                        onChange={handleChange}
+                        margin="normal"
+                        fullWidth
+                    />
+                    <br />
+                    <TextField
+                        label="Episode"
+                        value={episode}
+                        name='episode'
+                        onChange={handleChange}
+                        margin="normal"
+                        fullWidth
+                    />
+                    <br />
+                    <TextField
+                        label="Chapter"
+                        value={chapter}
+                        name='chapter'
                         onChange={handleChange}
                         margin="normal"
                         fullWidth

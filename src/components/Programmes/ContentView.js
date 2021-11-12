@@ -24,7 +24,8 @@ const styles=theme=> console.log("theme------",theme) || ({
     },
     container:{
         [theme.breakpoints.up('sm')]:{
-            height: 'calc(100% - 64px - 48px)' 
+            height: 'calc(100% - 64px - 48px)',
+            overflow:'auto',
         },
         [theme.breakpoints.down('xs')]:{
             height: 'calc(100% - 56px - 48px)'

@@ -42,7 +42,7 @@ export const programmes=[
         duration:"180min",
         type:"Movies",
         episode:"",
-        chapter:""
+        chapter:"1"
     },
     {
         id:"20002",
@@ -52,7 +52,7 @@ export const programmes=[
         duration:"120min",
         type:"Movies",
         episode:"",
-        chapter:""
+        chapter:"1"
     },
     {
         id:"30001",
@@ -61,8 +61,8 @@ export const programmes=[
         imageUrl:"https://m.media-amazon.com/images/M/MV5BYjFkMTlkYWUtZWFhNy00M2FmLThiOTYtYTRiYjVlZWYxNmJkXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg",
         duration:"20min",
         type:"Cartoons",
-        episode:"",
-        chapter:""
+        episode:"10",
+        chapter:"13"
     },
     {
         id:"30002",
@@ -71,8 +71,8 @@ export const programmes=[
         imageUrl:"https://m.media-amazon.com/images/M/MV5BMTcyOTc2OTA1Ml5BMl5BanBnXkFtZTcwOTI1MjkzOQ@@._V1_FMjpg_UX1000_.jpg",
         duration:"120min",
         type:"Cartoons",
-        episode:"",
-        chapter:""
+        episode:"3",
+        chapter:"1"
     },
     {
         id:"40001",
@@ -102,16 +102,16 @@ export const programmes=[
         duration:"0.5min",
         type:"Ads",
         episode:"",
-        chapter:""
+        chapter:"1"
     },
     {
         id:"50002",
         title:"Taco rico",
         synopsis:"Comida rápida restaurante redes sociales publicidad marco frontera fondo menú lista aperitivo comida plantilla diseño creativo acuarela vector ilustración diseño...",
-        imageUrl:"https://www.crushpixel.com/big-static13/preview4/fast-food-restaurant-social-media-1121401.jpg",
+        imageUrl:"https://cookieandkate.com/images/2020/04/black-bean-tacos-recipe-2.jpg",
         duration:"0.5min",
         type:"Ads",
         episode:"",
-        chapter:""
+        chapter:"1"
     },
 ]
