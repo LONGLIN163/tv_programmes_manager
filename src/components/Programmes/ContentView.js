@@ -64,12 +64,12 @@ const ContentView = ({classes}) => {
                         <Catalog />
                     </div>
                 </Grid>
-                <Grid item xs={12} sm={6}  className={classes.item2}>
+                <Grid item xs={12} sm={4}  className={classes.item2}>
                 <div className={classes.paperStyle}>
                         <Preview />
                     </div>
                 </Grid>
-                <Grid item xs={12} sm={3} className={classes.item}>
+                <Grid item xs={12} sm={5} className={classes.item}>
                 <div className={classes.paperStyle}>
                         <Playlist />
                     </div>

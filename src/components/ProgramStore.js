@@ -24,7 +24,7 @@ export const ProgramStore = (props) => {
         onDeleteItemFromPlayList,
         onItemSelect,
         onAddItemToPlayList,
-        DupProgramWarningOpen
+        DupProgramWarningOpen,
     }=props.contextValue;
 
     return ( 
@@ -48,7 +48,7 @@ export const ProgramStore = (props) => {
             onDeleteItemFromPlayList,
             onItemSelect,
             onAddItemToPlayList,
-            DupProgramWarningOpen
+            DupProgramWarningOpen,
         }}>
             {props.children}
         </ProgramContext.Provider>

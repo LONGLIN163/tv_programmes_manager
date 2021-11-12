@@ -18,6 +18,17 @@ const App = () => {
     const [programmesInPlayList,setProgrammesInPlayList]=useState([]);
     const [DupProgramWarningOpen,setDupProgramWarning]=useState(false);
 
+/*     const getColumns=()=>programTypes.map((item) => {
+      return {
+          field:item,
+          headerName: item.toUpperCase(),
+          minWidth: 150
+      }
+    })
+    const columnsTemp=getColumns();
+    const [columns,setColumns]=useState(columnsTemp);
+    const [rows,setRows]=useState([]); */
+
     const getProgramTypes=()=>{
       const initData=programTypes.reduce((initProgrammes, category) => ({
         ...initProgrammes,
@@ -120,9 +131,9 @@ const App = () => {
         onDeleteItemFromPlayList,
         onItemSelect,
         onAddItemToPlayList,
-        DupProgramWarningOpen
+        DupProgramWarningOpen,
     }
-    //console.log("contextValue--------",contextValue)
+    console.log("contextValue--------",contextValue)
 
     return ( 
         <ProgramStore contextValue={contextValue}>

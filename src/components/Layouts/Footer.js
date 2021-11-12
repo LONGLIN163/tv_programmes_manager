@@ -2,8 +2,17 @@ import React,{useContext} from 'react';
 import {withWidth, AppBar,Tabs,Tab} from '@material-ui/core';
 
 import { ProgramContext } from '../ProgramStore';
+import { withStyles } from '@material-ui/core/styles';
 
-const Footer = () => {
+
+const styles = {
+    tabsCenter: {
+      flexGrow: 1,
+    }
+  };
+  
+
+const Footer = ({classes}) => {
 
     const {programTypes,category,onCatSelect} = useContext(ProgramContext)
 
@@ -24,12 +33,14 @@ const Footer = () => {
                 indicatorColor="secondary"
                 textColor="secondary"
                 variant="scrollable"
-                scrollButtons="auto">
-                <Tab label="All" key={0} />
+                scrollButtons="auto"
+                
+            >
+                <Tab label="All" key={0} className={classes.tabsCenter}/>
                 {
                     programTypes.map((item,index) => {
                         return (
-                            <Tab label={item} key={index+1} />
+                            <Tab label={item} key={index+1} className={classes.tabsCenter}/>
                         )
                     })
                 }
@@ -39,4 +50,4 @@ const Footer = () => {
     
 }
  
-export default withWidth()(Footer);
+export default withStyles(styles)(Footer);withWidth()(Footer);
