@@ -18,17 +18,6 @@ const App = () => {
     const [programmesInPlayList,setProgrammesInPlayList]=useState([]);
     const [DupProgramWarningOpen,setDupProgramWarning]=useState(false);
 
-/*     const getColumns=()=>programTypes.map((item) => {
-      return {
-          field:item,
-          headerName: item.toUpperCase(),
-          minWidth: 150
-      }
-    })
-    const columnsTemp=getColumns();
-    const [columns,setColumns]=useState(columnsTemp);
-    const [rows,setRows]=useState([]); */
-
     const getProgramTypes=()=>{
       const initData=programTypes.reduce((initProgrammes, category) => ({
         ...initProgrammes,
@@ -95,7 +84,7 @@ const App = () => {
      const onAddItemToPlayList = (id) => {
 
         const prePlayListIdArr=programmesInPlayList.map(p => p.id);
-        console.log("prePlayListIdArr----",prePlayListIdArr)
+        //console.log("prePlayListIdArr----",prePlayListIdArr)
 
         if(prePlayListIdArr.includes(id)){
           setDupProgramWarning(true)
@@ -106,7 +95,7 @@ const App = () => {
         const programAddedArr=[]
         programAddedArr.push(programAdded)
         const temp=programmesInPlayList.concat(programAddedArr)
-        console.log("temp2---",temp)
+        //console.log("temp2---",temp)
         setProgrammesInPlayList(temp)
         setDupProgramWarning(false)
     }

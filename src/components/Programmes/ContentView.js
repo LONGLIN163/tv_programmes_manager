@@ -46,7 +46,7 @@ const styles=theme=>({
 })
 
 const ContentView = ({classes}) => {
-    console.log("classes---",classes)
+    //console.log("classes---",classes)
 
     const {DupProgramWarningOpen} = useContext(ProgramContext)
 

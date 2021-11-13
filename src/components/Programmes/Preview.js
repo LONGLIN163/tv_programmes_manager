@@ -7,8 +7,6 @@ import Typography from '@material-ui/core/Typography';
 
 import {Form} from './';
 import { ProgramContext } from '../ProgramStore';
-import { withStyles } from '@material-ui/core/styles';
-
 
 const Preview = () => {
     const {

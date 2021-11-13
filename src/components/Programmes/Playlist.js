@@ -1,6 +1,5 @@
 import React, { Fragment,useContext, useEffect,useState } from 'react';
-import {List,ListItem ,ListItemText,Typography, ListItemSecondaryAction, IconButton,Button} from '@material-ui/core';
-import DeleteIcon from '@material-ui/icons/Delete';
+import {Typography,Button} from '@material-ui/core';
 import { ProgramContext } from '../ProgramStore';
 import { DataGrid } from '@mui/x-data-grid';
 
@@ -83,29 +82,3 @@ const Playlist = () => {
  
 export default Playlist;
 
-
-
-{/* <Fragment>
-<List component="nav" >
-    {
-        programmesInPlayList.map( ({id,title}) => {
-            return (
-                <ListItem 
-                    button 
-                    key={id} 
-                    onClick={ () => onItemSelect(id)}
-                >
-                    <ListItemText 
-                        primary={title}
-                    />
-                    <ListItemSecondaryAction>
-                        <IconButton edge="end" aria-label="comments" onClick={()=>onDeleteItemFromPlayList(id)}>
-                            <DeleteIcon />
-                        </IconButton>
-                    </ListItemSecondaryAction>
-                </ListItem>
-            )
-        })
-    }
-</List>
-</Fragment> */}
