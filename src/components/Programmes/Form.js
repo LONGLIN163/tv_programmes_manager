@@ -1,6 +1,7 @@
 import React,{useState,useEffect,useContext} from 'react';
 import {FormControl,MenuItem,InputLabel,Select,TextField,Button} from '@material-ui/core';
-import { ProgramContext } from '../ProgramStore';
+//import { ProgramContext } from '../ProgramStore';
+import { useProgramContext } from '../ProgramStore';
 
 
 const Form = ({programme,onSubmit}) => {
@@ -14,7 +15,8 @@ const Form = ({programme,onSubmit}) => {
     const [episode,setEpisode]=useState('');
     const [chapter,setChapter]=useState('');
 
-    const {setOpenDialog,programTypes} = useContext(ProgramContext)
+    //const {setOpenDialog,programTypes} = useContext(ProgramContext)
+    const {setOpenDialog,programTypes} = useProgramContext()
 
     const [currentPrograme,setCurrentPrograme]=useState({});
     

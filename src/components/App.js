@@ -6,7 +6,6 @@ import {Header,Footer} from './Layouts';
 import {types,programmes } from '../store';
 import {ContentView} from './Programmes'
 
- 
 const App = () => {
     const [initProgrammes,setInitProgrammes]=useState(programmes);
     const [programme,setProgram]=useState({});
@@ -124,6 +123,14 @@ const App = () => {
     }
     console.log("contextValue--------",contextValue)
 
+    // return ( 
+    //     <ProgramStore contextValue={contextValue}>
+    //         <CssBaseline />
+    //         <Header />
+    //         <ContentView />
+    //         <Footer />
+    //     </ProgramStore>
+    //  );
     return ( 
         <ProgramStore contextValue={contextValue}>
             <CssBaseline />

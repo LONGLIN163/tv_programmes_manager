@@ -1,7 +1,7 @@
 import React,{useContext} from 'react';
 import {withWidth, AppBar,Tabs,Tab} from '@material-ui/core';
 
-import { ProgramContext } from '../ProgramStore';
+import { useProgramContext } from '../../ProgramStore';
 import { withStyles } from '@material-ui/core/styles';
 
 
@@ -14,7 +14,11 @@ const styles = {
 
 const Footer = ({classes}) => {
 
-    const {programTypes,category,onCatSelect} = useContext(ProgramContext)
+    //const {programTypes,category,onCatSelect} = useContext(ProgramContext)
+    const {programTypes,category,onCatSelect} = useProgramContext()
+
+    console.log("programTypes----in Footer---",programTypes)
+
 
     const onIndexSelect = (e,index) => {
         onCatSelect(index===0 ? '': programTypes[index-1])
@@ -34,13 +38,13 @@ const Footer = ({classes}) => {
                 textColor="secondary"
                 variant="scrollable"
                 scrollButtons="auto"
-                
+                title="AppBar"
             >
-                <Tab label="All" key={0} className={classes.tabsCenter}/>
+                <Tab label="All" key={0} className={classes.tabsCenter} title="All"/>
                 {
-                    programTypes.map((item,index) => {
+                    programTypes && programTypes.map((item,index) => {
                         return (
-                            <Tab label={item} key={index+1} className={classes.tabsCenter}/>
+                            <Tab label={item} key={index+1} className={classes.tabsCenter} title={item}/>
                         )
                     })
                 }

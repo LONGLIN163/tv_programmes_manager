@@ -1,6 +1,6 @@
 import React, { Fragment,useContext, useEffect,useState } from 'react';
 import {Typography,Button} from '@material-ui/core';
-import { ProgramContext } from '../ProgramStore';
+import { useProgramContext } from '../ProgramStore';
 import { DataGrid } from '@mui/x-data-grid';
 
 
@@ -9,7 +9,7 @@ const Playlist = () => {
 
     const {
         programmesInPlayList,
-    } = useContext(ProgramContext)
+    } = useProgramContext()
     
     
     const [rows, setRows] = useState(programmesInPlayList);

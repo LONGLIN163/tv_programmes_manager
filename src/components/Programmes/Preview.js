@@ -6,14 +6,14 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 
 import {Form} from './';
-import { ProgramContext } from '../ProgramStore';
+import { useProgramContext } from '../ProgramStore';
 
 const Preview = () => {
     const {
         editMode,
         programme,
         onEditForm
-    } = useContext(ProgramContext)
+    } = useProgramContext()
 
     //console.log("programme in preview-----",programme)
 

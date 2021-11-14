@@ -4,7 +4,8 @@ import Alert from '@material-ui/lab/Alert';
 
 import {Catalog,Preview,Playlist} from './'
 import { withStyles } from '@material-ui/core/styles';
-import { ProgramContext } from '../ProgramStore';
+//import { ProgramContext } from '../ProgramStore';
+import { useProgramContext } from '../ProgramStore';
 
 
 const styles=theme=>({
@@ -48,7 +49,8 @@ const styles=theme=>({
 const ContentView = ({classes}) => {
     //console.log("classes---",classes)
 
-    const {DupProgramWarningOpen} = useContext(ProgramContext)
+    //const {DupProgramWarningOpen} = useContext(ProgramContext)
+    const {DupProgramWarningOpen} = useProgramContext()
 
     return(
         <>
