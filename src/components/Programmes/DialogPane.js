@@ -26,6 +26,7 @@ const DialogPane = () => {
                     aria-label="add" 
                     onClick={handleToggle}
                     size="small"
+                    title="addProgramBtn"
                 >
                     <AddIcon />
                 </Fab>

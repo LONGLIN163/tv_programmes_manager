@@ -14,11 +14,7 @@ const styles = {
 
 const Footer = ({classes}) => {
 
-    //const {programTypes,category,onCatSelect} = useContext(ProgramContext)
     const {programTypes,category,onCatSelect} = useProgramContext()
-
-    console.log("programTypes----in Footer---",programTypes)
-
 
     const onIndexSelect = (e,index) => {
         onCatSelect(index===0 ? '': programTypes[index-1])
