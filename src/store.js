@@ -113,5 +113,5 @@ export const programmes=[
         type:"Ads",
         episode:"",
         chapter:"1"
-    },
+    }
 ]

@@ -56,22 +56,20 @@ describe('ContentView Test', () => {
         </ProgramContextProvider>
       )
     
+    it('Check if Catalog rendered', () => {
+        const CatalogTitle=wrapper.find('h4[title="Media Resources"]').text()
+        expect(CatalogTitle).toEqual("Media Resources");
+    });
+    
     
     it('Check if Preview rendered', () => {
         const PreviewTitle=wrapper.find('h4[title="middleView"]').text()
-        //console.log("PreviewTitle-------------",PreviewTitle)
         expect(PreviewTitle).toEqual("Preview");
+    });
+    
+    it('Check if Playlist rendered', () => {
+        const PlaylistTitle=wrapper.find('h4[title="PlayList"]').text()
+        expect(PlaylistTitle).toEqual("PlayList");
      });
-    it('Check if Preview rendered', () => {
-        const PreviewTitle=wrapper.find('h4[title="middleView"]').text()
-        //console.log("PreviewTitle-------------",PreviewTitle)
-        expect(PreviewTitle).toEqual("Preview");
-     });
-    it('Check if Catalog rendered', () => {
-        const CatalogTitle=wrapper.find('h4[title="Media Resources"]').text()
-        //console.log("CatalogTitle-------------",CatalogTitle)
-        expect(CatalogTitle).toEqual("Media Resources");
-     });
-
    }
  );

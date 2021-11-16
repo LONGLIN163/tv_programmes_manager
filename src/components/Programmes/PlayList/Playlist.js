@@ -3,8 +3,6 @@ import {Typography,Button} from '@material-ui/core';
 import { useProgramContext } from '../../ProgramContextProvider';
 import { DataGrid } from '@mui/x-data-grid';
 
-
-
 const Playlist = () => {
 
     const {
@@ -16,7 +14,6 @@ const Playlist = () => {
     useEffect(() => {
         setRows(programmesInPlayList)
     },[programmesInPlayList])
-    //console.log("rows------",rows)
     const isEmpty= Object.keys(rows).length === 0 
     
     // *******hard code first(there bugs for updating...)******

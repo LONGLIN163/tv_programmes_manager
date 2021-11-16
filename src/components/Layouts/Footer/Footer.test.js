@@ -23,13 +23,10 @@ describe('Footer test', () => {
      </ProgramContextProvider>
    )
    
-   it('set tab Series status to be true', () => {
-
+   it('Set tab Series status to be true', () => {
       //status --- before click
       const SeriesTab = wrapper.find('button[title="Series"]');
-      //console.log("SeriesTab-----",SeriesTab.debug())
       const SeriesStatus = SeriesTab.prop("aria-selected");
-      //console.log("SeriesStatus--before click--",SeriesStatus)
       expect(SeriesStatus).toBe(false);
 
       SeriesTab.hostNodes().simulate('click',{ target: { value: 1 }});
@@ -37,7 +34,6 @@ describe('Footer test', () => {
       // status --- after click
       const SeriesTabAfter = wrapper.find('button[title="Series"]');
       const SeriesStatusAfter = SeriesTabAfter.prop("aria-selected");
-      //console.log("SeriesStatus--after click--",SeriesStatusAfter)
       expect(SeriesStatusAfter).toBe(true);
 
     })

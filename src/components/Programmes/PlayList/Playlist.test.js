@@ -19,7 +19,7 @@ describe('PlayList test', () => {
     )
 
     it('check if adding and delete item to playlist works', () => {
-        //add few items
+        //1. add few items
         const item1Add = wrapper.find('button[title="Breaking Badadd"]');
         item1Add.simulate("click",{ target: { value: "10001" }});
         const item1Added = wrapper.find('div[data-value="10001"]');
@@ -30,19 +30,20 @@ describe('PlayList test', () => {
         const item2Added = wrapper.find('div[data-value="10002"]');
         expect(item2Added.text()).toEqual("10002");
 
-        // ******important: testing bug, separat instance,below snippet will work*******
 
-        // const item3Add = wrapper.find('button[title="The Invisible Guestadd"]');
-        // item3Add.simulate("click",{ target: { value: "20002" }});
-        // const item3Added = wrapper.find('div[data-value="20002"]');
-        // console.log("item3Added---------------",item3Added.text())
-        // expect(item3Added.text()).toEqual("20002");
+        // ******important: testing bug, separat instance,below snippet will work******
 
-        //del one item---select it
+        /* const item3Add = wrapper.find('button[title="The Invisible Guestadd"]');
+        item3Add.simulate("click",{ target: { value: "20002" }});
+        const item3Added = wrapper.find('div[data-value="20002"]');
+        console.log("item3Added---------------",item3Added.text())
+        expect(item3Added.text()).toEqual("20002"); */
+
+        //2.1 del one item---select it
         const item1InPlaylist = wrapper.find('div[data-id="10001"]');
         item1InPlaylist.hostNodes().simulate("click");
         expect(wrapper.find('div[data-id="10001"]').prop("aria-selected")).toBe(true);
-        //del one item---del it
+        //2.2 del one item---del it
         const purgeBtn = wrapper.find('button[title="purgeBtn"]');
         purgeBtn.simulate("click");
         expect(wrapper.find('div[data-id="10001"]').exists()).toBe(false);

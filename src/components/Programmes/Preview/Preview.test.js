@@ -19,14 +19,14 @@ describe('Preview test', () => {
     )
 
     it('check update or edit item', () => {
-        //active edit model
+        // 1. active edit model
         const itemEdit = wrapper.find('button[title="Breaking Bad"]');
         itemEdit.simulate("click",{ target: { value: "10001" }});
-        // and check title in preview page after click
+        // 2. check title in preview page after click
         expect(wrapper.find('h4[title="middleView"]').text()).toEqual("Edit View");
         expect(wrapper.find('h2[title="Breaking Bad"]').text()).toEqual("Breaking Bad");
         
-        //******check if item data is filled into the form******
+        //******check if item data is filled into the form, if edit model is 'Edit View'******
 
         // 1. change a input
         const titleInput=wrapper.find('input[name="title"]')
@@ -38,9 +38,7 @@ describe('Preview test', () => {
         typeSelect.simulate('change', { target: { value:"Shows", name:"type"}})
         expect(wrapper.find('input[name="type"]').props().value).toEqual("Shows");
 
-        //console.log("after all-------------------",wrapper.find('input[name="title"]').props().value)
-
-        // 3.update form
+        // 3. update form
         const formbtn=wrapper.find('button[title="formbtn"]')
         formbtn.simulate("click")
         expect(wrapper.find('div[title="hahaha"]').exists()).toBe(true);

@@ -5,7 +5,6 @@ import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 
 import {grey, amber} from '@material-ui/core/colors';
 
-
 const theme = createTheme({
   palette: {
     primary: {
@@ -22,8 +21,6 @@ const theme = createTheme({
     }
   },
 });
-
-//console.log("index---theme---",theme)
 
 
 ReactDOM.render( 

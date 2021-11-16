@@ -16,6 +16,10 @@ describe('Form Test', () => {
         </ProgramContextProvider>
       )
 
+      /**
+       * Below code is repeated(tested) in the other compo, because create and edit item is under different parent compo...
+       * Maybe I will create some validation test in the future here...
+       *  */ 
       
       it('Check if Form can be filled out for each field', () => {
         // 1. test title input
@@ -27,7 +31,6 @@ describe('Form Test', () => {
         const imageUrlInput=wrapper.find('input[name="imageUrl"]')
         const imageUrl="https://m.media-amazon.com/images/M/MV5BMTAwMjU5OTgxNjZeQTJeQWpwZ15BbWU4MDUxNDYxODEx._V1_FMjpg_UX1000_.jpg"
         imageUrlInput.simulate('change', { target: { value:imageUrl, name:"imageUrl"}})
-        //console.log("titleInput value----------------",wrapper.find('input[name="title"]').props().value)
         expect(wrapper.find('input[name="imageUrl"]').props().value).toEqual(imageUrl);
 
         // 3. test duration input

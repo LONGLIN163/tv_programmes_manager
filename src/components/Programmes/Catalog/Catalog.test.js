@@ -19,17 +19,17 @@ describe('Catalog test', () => {
       </ProgramContextProvider>
     )
 
-    it('check if the preview compo gets changed to preview model when click listitem', () => {
+    it('check if the preview compo gets changed to preview model when click list item', () => {
       //status --- before click
       const itemPreview = wrapper.find('div[title="Breaking Bad"]');
       itemPreview.simulate("click",{ target: { value: "10001" }});
-      // only check title in preview page after click
+      // only need to check title in preview page after click
       expect(wrapper.find('h4[title="middleView"]').text()).toEqual("Preview");
       expect(wrapper.find('h2[title="Breaking Bad"]').text()).toEqual("Breaking Bad");
 
     })
     
-    it('check if the preview compo gets changed to edit model when click listitem', () => {
+    it('check if the preview compo gets changed to edit model when click item edit button', () => {
       //status --- before click
       const itemEdit = wrapper.find('button[title="Breaking Bad"]');
       itemEdit.simulate("click",{ target: { value: "10001" }});
@@ -43,8 +43,7 @@ describe('Catalog test', () => {
       //status --- before click
       const itemDel = wrapper.find('button[title="Lostdel"]');
       itemDel.simulate("click",{ target: { value: "10002" }});
-      // only check title in preview page after click
-      // console.log("itemDel------",itemDel.text()=='')
+      // only check title exist in the catalog
       expect(itemDel.text()).toEqual("");
     })
 
@@ -54,8 +53,7 @@ describe('Catalog test', () => {
         itemAdd.simulate("click",{ target: { value: "10003" }});
 
         const itemAdded = wrapper.find('[data-value="10003"]');
-        // only check title in preview page after click
-        //console.log("itemAdded------",itemAdded.text())
+        // only check this item exist in playlist page 
         expect(itemAdded.text()).toEqual("10003");
       })
   }

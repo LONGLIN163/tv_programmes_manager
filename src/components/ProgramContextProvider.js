@@ -2,11 +2,8 @@
 import React, { useEffect,useState,createContext,useContext} from 'react';
 import {types,programmes } from '../store';
 
-
-
 export const ProgramContext = createContext({})
 export const useProgramContext = () => useContext(ProgramContext);
-
 
 export const ProgramContextProvider = ({children}) => {
 
@@ -87,7 +84,6 @@ export const ProgramContextProvider = ({children}) => {
        const onAddItemToPlayList = (id) => {
   
           const prePlayListIdArr=programmesInPlayList.map(p => p.id);
-          //console.log("prePlayListIdArr----",prePlayListIdArr)
   
           if(prePlayListIdArr.includes(id)){
             setDupProgramWarning(true)
@@ -98,7 +94,6 @@ export const ProgramContextProvider = ({children}) => {
           const programAddedArr=[]
           programAddedArr.push(programAdded)
           const temp=programmesInPlayList.concat(programAddedArr)
-          //console.log("temp2---",temp)
           setProgrammesInPlayList(temp)
           setDupProgramWarning(false)
       }
@@ -125,7 +120,6 @@ export const ProgramContextProvider = ({children}) => {
           onAddItemToPlayList,
           DupProgramWarningOpen,
       }
-      //console.log("contextValue--------",contextValue)
 
     return ( 
         <ProgramContext.Provider value={contextValue}>
