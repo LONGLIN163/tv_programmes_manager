@@ -52,7 +52,6 @@ export const ProgramContextProvider = ({children}) => {
          const pArr=[]
          pArr.push(programme)
          const temp=initProgrammes.concat(pArr)
-         console.log("temp---",temp)
          setInitProgrammes(temp)
        }
   

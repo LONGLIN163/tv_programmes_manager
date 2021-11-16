@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect,useState } from 'react';
 import {Typography,Button} from '@material-ui/core';
-import { useProgramContext } from '../ProgramStore';
+import { useProgramContext } from '../../ProgramStore';
 import { DataGrid } from '@mui/x-data-grid';
 
 
@@ -64,13 +64,13 @@ const Playlist = () => {
                                 columns={columns}
                                 rows={rows}
                                 checkboxSelection
-                                disableSelectionOnClick
+                                //disableSelectionOnClick
                                 hideFooterPagination
                                 onSelectionModelChange={itm => haha=itm}
                             />
                         </div>
                         <br />
-                        <Button variant="contained" color="primary" onClick={handlePurge}>
+                        <Button variant="contained" title="purgeBtn" color="primary" onClick={handlePurge}>
                             Purge
                         </Button>
                       </>

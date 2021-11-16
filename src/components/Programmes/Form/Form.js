@@ -1,7 +1,6 @@
 import React,{useState,useEffect,useContext} from 'react';
 import {FormControl,MenuItem,InputLabel,Select,TextField,Button} from '@material-ui/core';
-//import { ProgramContext } from '../ProgramStore';
-import { useProgramContext } from '../ProgramStore';
+import { useProgramContext } from '../../ProgramStore';
 
 
 const Form = ({programme,onSubmit}) => {
@@ -15,7 +14,6 @@ const Form = ({programme,onSubmit}) => {
     const [episode,setEpisode]=useState('');
     const [chapter,setChapter]=useState('');
 
-    //const {setOpenDialog,programTypes} = useContext(ProgramContext)
     const {setOpenDialog,programTypes} = useProgramContext()
 
     const [currentPrograme,setCurrentPrograme]=useState({});
@@ -46,33 +44,32 @@ const Form = ({programme,onSubmit}) => {
         }
         if(name==="type") setType(value);
         if(name==="synopsis") setSynopsis(value);
-        if(name==="imageUrl") setSynopsis(value);
-        if(name==="duration") setSynopsis(value);
-        if(name==="episode") setSynopsis(value);
-        if(name==="chapter") setSynopsis(value);
+        if(name==="imageUrl") setImageUrl(value);
+        if(name==="duration") setDuration(value);
+        if(name==="episode") setEpisode(value);
+        if(name==="chapter") setChapter(value);
     };
 
     useEffect(() => {
-        setCurrentPrograme({id,title,type,synopsis})
-    },[title,type,synopsis])
+        setCurrentPrograme({id,title,type,synopsis,imageUrl,duration,episode,chapter})
+    },[title,type,synopsis,imageUrl,duration,episode,chapter])
 
     const handleSubmit = () => {
-        //console.log("currentPrograme-------",currentPrograme)
-
         onSubmit(currentPrograme)
-
         setCurrentPrograme({
             title:'',
+            imageUrl:'',
+            type:'',
             synopsis:'',
-            type:''
+            duration:'',
+            episode:'',
+            chapter:''
         })
         setOpenDialog(false)
     }
-    
-
 
     return (<>
-                <form action="">
+                <form action="" title="formPane">
                     <TextField
                         label="Title"
                         value={title}
@@ -151,6 +148,7 @@ const Form = ({programme,onSubmit}) => {
                     <Button 
                         variant="contained"
                         color="secondary"
+                        title="formbtn"
                         onClick={handleSubmit}
                         disabled={!title || !programTypes}
                     >

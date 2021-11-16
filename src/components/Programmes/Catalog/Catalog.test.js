@@ -5,8 +5,8 @@ import {ProgramContextProvider,useProgramContext} from '../../ProgramStore';
 import Adapter from 'enzyme-adapter-react-16';
 import { configure, mount, shallow } from 'enzyme';
 import  Catalog from './Catalog'
-import  Preview from '../Preview'
-import  PlayList from '../PlayList'
+import  Preview from '../Preview/Preview'
+import  PlayList from '../PlayList/Playlist'
 
 configure({ adapter: new Adapter() });
 
@@ -30,7 +30,7 @@ describe('Catalog test', () => {
 
     })
     
-    it('check if the preview compo gets changed to preview model when click listitem', () => {
+    it('check if the preview compo gets changed to edit model when click listitem', () => {
       //status --- before click
       const itemEdit = wrapper.find('button[title="Breaking Bad"]');
       itemEdit.simulate("click",{ target: { value: "10001" }});
