@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
 import React from 'react';
-import {ProgramContextProvider} from '../../ProgramStore';
+import {ProgramContextProvider} from '../../ProgramContextProvider';
 import Adapter from 'enzyme-adapter-react-16';
 import { withStyles } from '@material-ui/core/styles';
 import { configure, mount } from 'enzyme';

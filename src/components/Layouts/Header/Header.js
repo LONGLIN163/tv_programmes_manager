@@ -13,7 +13,7 @@ const Header = ({classes}) => {
     return ( 
         <AppBar position="static">
             <Toolbar>
-                <Typography variant="h3" color="inherit" className={classes.flex}> 
+                <Typography variant="h5" color="inherit" className={classes.flex}> 
                     VSN Media Kit
                 </Typography>
                 <DialogPane/>

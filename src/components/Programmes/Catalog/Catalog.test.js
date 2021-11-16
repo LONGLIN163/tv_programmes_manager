@@ -1,9 +1,8 @@
-import { render,fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom'
 import React from 'react';
-import {ProgramContextProvider,useProgramContext} from '../../ProgramStore';
+import {ProgramContextProvider} from '../../ProgramContextProvider';
 import Adapter from 'enzyme-adapter-react-16';
-import { configure, mount, shallow } from 'enzyme';
+import { configure, mount } from 'enzyme';
 import  Catalog from './Catalog'
 import  Preview from '../Preview/Preview'
 import  PlayList from '../PlayList/Playlist'

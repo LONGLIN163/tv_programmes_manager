@@ -1,7 +1,7 @@
 import React from 'react';
 import {withWidth, AppBar,Tabs,Tab} from '@material-ui/core';
 
-import { useProgramContext } from '../../ProgramStore';
+import { useProgramContext } from '../../ProgramContextProvider';
 import { withStyles } from '@material-ui/core/styles';
 
 

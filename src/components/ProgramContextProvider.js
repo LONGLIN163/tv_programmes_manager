@@ -53,6 +53,7 @@ export const ProgramContextProvider = ({children}) => {
          pArr.push(programme)
          const temp=initProgrammes.concat(pArr)
          setInitProgrammes(temp)
+         
        }
   
        const onDeleteItem = (id) => {

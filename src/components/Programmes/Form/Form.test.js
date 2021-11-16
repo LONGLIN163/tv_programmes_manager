@@ -1,12 +1,10 @@
 import '@testing-library/jest-dom'
 import React from 'react';
-import {ProgramContextProvider} from '../../ProgramStore';
+import {ProgramContextProvider} from '../../ProgramContextProvider';
 import Adapter from 'enzyme-adapter-react-16';
 import { configure, mount } from 'enzyme';
 
 import  Form from './Form'
-import  DialogPane from '../DialogPane/DialogPane'
-
 
 configure({ adapter: new Adapter() });
 

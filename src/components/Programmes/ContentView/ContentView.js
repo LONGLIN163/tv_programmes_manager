@@ -4,7 +4,7 @@ import Alert from '@material-ui/lab/Alert';
 
 import {Catalog,Preview,Playlist} from '..'
 import { withStyles } from '@material-ui/core/styles';
-import { useProgramContext } from '../../ProgramStore';
+import { useProgramContext } from '../../ProgramContextProvider';
 
 
 const styles=theme=>({
