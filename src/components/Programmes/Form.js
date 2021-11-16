@@ -20,8 +20,8 @@ const Form = ({programme,onSubmit}) => {
 
     const [currentPrograme,setCurrentPrograme]=useState({});
     
-    console.log("onSubmit------",onSubmit)
-    console.log("programme in Form-------",programme)
+    //console.log("onSubmit------",onSubmit)
+    //console.log("programme in Form-------",programme)
 
     useEffect(() => {
         if(programme){
@@ -57,7 +57,7 @@ const Form = ({programme,onSubmit}) => {
     },[title,type,synopsis])
 
     const handleSubmit = () => {
-        console.log("currentPrograme-------",currentPrograme)
+        //console.log("currentPrograme-------",currentPrograme)
 
         onSubmit(currentPrograme)
 

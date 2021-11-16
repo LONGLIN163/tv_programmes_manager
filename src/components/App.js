@@ -6,10 +6,6 @@ import {Header,Footer} from './Layouts';
 import {ContentView} from './Programmes'
 
 const App = () => {
-
-
-
-
     return ( 
         <ProgramContextProvider>
             <CssBaseline />

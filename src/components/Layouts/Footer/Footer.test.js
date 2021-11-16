@@ -1,9 +1,7 @@
-import { render,fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom'
 import React from 'react';
-import {ProgramContextProvider,useProgramContext} from '../../ProgramStore';
+import {ProgramContextProvider} from '../../ProgramStore';
 import Adapter from 'enzyme-adapter-react-16';
-import {AppBar,Tabs,Tab} from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { configure, mount } from 'enzyme';
 import  Footer from './Footer'
@@ -12,19 +10,20 @@ configure({ adapter: new Adapter() });
 
 describe('Footer test', () => {
 
-   it('set tab Series status to be true', () => {
-      const styles = {
-         tabsCenter: {
-            flexGrow: 1,
-         }
-      };
+   const styles = {
+      tabsCenter: {
+         flexGrow: 1,
+      }
+   };
 
-      const FooterComposition = withStyles(styles)(Footer);
-      const wrapper=mount( 
-        <ProgramContextProvider>
-            <FooterComposition />
-        </ProgramContextProvider>
-      )
+   const FooterComposition = withStyles(styles)(Footer);
+   const wrapper=mount( 
+     <ProgramContextProvider>
+         <FooterComposition />
+     </ProgramContextProvider>
+   )
+   
+   it('set tab Series status to be true', () => {
 
       //status --- before click
       const SeriesTab = wrapper.find('button[title="Series"]');

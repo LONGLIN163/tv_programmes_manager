@@ -15,8 +15,6 @@ const Preview = () => {
         onEditForm
     } = useProgramContext()
 
-    //console.log("programme in preview-----",programme)
-
     const isEmpty= Object.keys(programme).length === 0
 
     return ( 
@@ -26,11 +24,12 @@ const Preview = () => {
                 style={{marginTop:20}}
                 color="secondary"
                 gutterBottom
+                title="middleView"
             >
                 {
-                editMode
-                ? 'Edit View'
-                : 'Preview'
+                    editMode
+                    ? 'Edit View'
+                    : 'Preview'
                 }
             </Typography>
 
@@ -45,7 +44,7 @@ const Preview = () => {
                         image={programme.imageUrl}
                         />
                         <CardContent>
-                        <Typography variant="h5" component="h2">
+                        <Typography variant="h5" title={programme.title} component="h2">
                             {programme.title}
                         </Typography>
 

@@ -1,13 +1,10 @@
-import React, {useContext } from 'react';
+import React, { useState } from 'react';
 import {Dialog,DialogContent,DialogContentText,DialogTitle,Fab,} from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
-import {Form} from './';
-//import { ProgramContext } from '../ProgramStore';
-import { useProgramContext } from '../ProgramStore';
+import {Form} from '..';
+import { useProgramContext } from '../../ProgramStore';
 
 const DialogPane = () => {
-
-    //const {openDialog,setOpenDialog,onItemCreate} = useContext(ProgramContext)
     const {openDialog,setOpenDialog,onItemCreate} = useProgramContext()
 
     const handleToggle=() => {
@@ -33,7 +30,7 @@ const DialogPane = () => {
 
                 <Dialog 
                     aria-labelledby="form-dialog-title"
-                    open={openDialog}
+                    open={openDialog ? openDialog : false }
                     onClose={handleToggle}
                     fullWidth
                 >

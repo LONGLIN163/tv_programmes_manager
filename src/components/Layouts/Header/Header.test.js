@@ -10,6 +10,7 @@ describe('Header Test', () => {
         }
     }
     const HeaderComposition = withStyles(styles)(Header);
+    
     it('Check if DialogPane rendered', () => {
        const {queryByTitle} = render(<HeaderComposition />)
        const DialogPane=queryByTitle("addProgramBtn")

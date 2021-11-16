@@ -1,4 +1,4 @@
-import React, { Fragment,useContext, useEffect,useState } from 'react';
+import React, { Fragment, useEffect,useState } from 'react';
 import {Typography,Button} from '@material-ui/core';
 import { useProgramContext } from '../ProgramStore';
 import { DataGrid } from '@mui/x-data-grid';
@@ -16,7 +16,8 @@ const Playlist = () => {
     useEffect(() => {
         setRows(programmesInPlayList)
     },[programmesInPlayList])
-    const isEmpty= Object.keys(rows).length === 0
+    //console.log("rows------",rows)
+    const isEmpty= Object.keys(rows).length === 0 
     
     // *******hard code first(there bugs for updating...)******
     const columns=[
@@ -48,6 +49,7 @@ const Playlist = () => {
                 variant={"h4" }
                 style={{marginTop:20}}
                 color="secondary"
+                title="PlayList"
                 gutterBottom
             >
                 PlayList

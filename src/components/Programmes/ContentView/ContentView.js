@@ -1,11 +1,10 @@
-import React,{useContext} from 'react';
+import React from 'react';
 import {Grid} from '@material-ui/core';
 import Alert from '@material-ui/lab/Alert';
 
-import {Catalog,Preview,Playlist} from './'
+import {Catalog,Preview,Playlist} from '..'
 import { withStyles } from '@material-ui/core/styles';
-//import { ProgramContext } from '../ProgramStore';
-import { useProgramContext } from '../ProgramStore';
+import { useProgramContext } from '../../ProgramStore';
 
 
 const styles=theme=>({
@@ -47,16 +46,14 @@ const styles=theme=>({
 })
 
 const ContentView = ({classes}) => {
-    //console.log("classes---",classes)
 
-    //const {DupProgramWarningOpen} = useContext(ProgramContext)
     const {DupProgramWarningOpen} = useProgramContext()
 
     return(
         <>
             { 
                 DupProgramWarningOpen 
-                ?<Alert severity="error">This is an error alert — check it out!</Alert>
+                ?<Alert severity="error">You have already add this item to the Playlist!</Alert>
                 :null
             }
 
