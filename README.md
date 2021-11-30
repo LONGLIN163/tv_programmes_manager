@@ -7,8 +7,9 @@ All the same with yarn.
 
 Trigger test
 ### `npm run test`
+then press **a** to excute all the test
 
 Check the coverage
-### `npm test -- --coverage`
+### `npm run coverage`
 
 
