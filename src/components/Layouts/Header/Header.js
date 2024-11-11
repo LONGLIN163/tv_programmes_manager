@@ -14,7 +14,7 @@ const Header = ({classes}) => {
         <AppBar position="static">
             <Toolbar>
                 <Typography variant="h5" color="inherit" className={classes.flex}> 
-                    TEST Media Kit
+                    TEST2 Media Kit
                 </Typography>
                 <DialogPane/>
             </Toolbar>
